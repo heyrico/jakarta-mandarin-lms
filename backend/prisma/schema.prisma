@@ -1,0 +1,221 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// DYNAMIC ROLE MANAGEMENT
+model Role {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique // "ADMIN", "GURU", "SISWA", "FINANCE", etc.
+  displayName String   // "Administrator", "Guru", "Siswa", "Finance"
+  description String?
+  isActive    Boolean  @default(true)
+  isSystem    Boolean  @default(false) // System roles cannot be deleted
+  permissions RolePermission[]
+  users       User[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Permission {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique // "user.create", "user.read", "user.update", "user.delete"
+  displayName String   // "Create User", "Read User", "Update User", "Delete User"
+  module      String   // "user", "finance", "academic", "system"
+  description String?
+  isActive    Boolean  @default(true)
+  roles       RolePermission[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model RolePermission {
+  id           Int        @id @default(autoincrement())
+  roleId       Int
+  permissionId Int
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  createdAt    DateTime   @default(now())
+  
+  @@unique([roleId, permissionId])
+}
+
+// CONVERSATION TYPE MANAGEMENT
+model ConversationType {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique // "private", "group", "announcement", "support"
+  displayName String   // "Private Chat", "Group Chat", "Announcement", "Support"
+  description String?
+  isActive    Boolean  @default(true)
+  isSystem    Boolean  @default(false) // System types cannot be deleted
+  maxParticipants Int? // null = unlimited
+  allowFileUpload Boolean @default(true)
+  allowEditMessage Boolean @default(true)
+  allowDeleteMessage Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// AUDIT LOGGING
+model AuditLog {
+  id          Int      @id @default(autoincrement())
+  userId      Int?
+  action      String   // "CREATE", "UPDATE", "DELETE", "LOGIN", "LOGOUT"
+  entityType  String   // "User", "Role", "Permission", "Settings"
+  entityId    String?  // ID of the affected entity
+  oldValues   String?  // JSON string of old values
+  newValues   String?  // JSON string of new values
+  ipAddress   String?
+  userAgent   String?
+  createdAt   DateTime @default(now())
+  
+  user        User?    @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  email       String   @unique
+  name        String
+  roleId      Int?     // Reference to Role table instead of string
+  password    String   @default("password123")
+  
+  // Additional fields for real data
+  phone       String?
+  address     String?
+  birthDate   DateTime?
+  gender      String?   // "L", "P"
+  parentName  String?
+  parentPhone String?
+  school      String?
+  grade       String?
+  joinDate    DateTime  @default(now())
+  isActive    Boolean   @default(true)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  role        Role?           @relation(fields: [roleId], references: [id])
+  studentCredits StudentCredit[]
+  auditLogs   AuditLog[]
+}
+
+model Kelas {
+  id          Int      @id @default(autoincrement())
+  name        String
+  teacher     String
+  schedule    String
+  startDate   DateTime
+  endDate     DateTime
+  maxStudents Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Invoice {
+  id          Int      @id @default(autoincrement())
+  invoiceNumber String @unique
+  studentName String
+  amount      Float
+  status      String   @default("pending")
+  dueDate     DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Account {
+  id          Int      @id @default(autoincrement())
+  name        String
+  type        String
+  balance     Float    @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  entries     JournalEntry[]
+}
+
+model Journal {
+  id          Int      @id @default(autoincrement())
+  date        DateTime
+  description String
+  total       Float
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  entries     JournalEntry[]
+}
+
+model JournalEntry {
+  id        Int      @id @default(autoincrement())
+  journalId Int
+  accountId Int
+  debit     Float    @default(0)
+  credit    Float    @default(0)
+  journal   Journal  @relation(fields: [journalId], references: [id])
+  account   Account  @relation(fields: [accountId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// NEW MODELS FOR CREDIT SYSTEM
+model CreditPackage {
+  id          Int      @id @default(autoincrement())
+  name        String   // "Paket 20 Jam Private", "Paket 30 Jam Regular"
+  description String?
+  price       Float    // Rp 5.000.000
+  creditHours Int      // 20 jam, 30 jam
+  packageType String   @default("SATUAN") // "SATUAN" atau "BUNDLE"
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  studentCredits StudentCredit[]
+}
+
+model StudentCredit {
+  id              Int      @id @default(autoincrement())
+  userId          Int
+  creditPackageId Int
+  remainingHours  Float    @default(0) // Saldo jam tersisa
+  totalHours      Float    // Total jam dari paket
+  status          String   @default("ACTIVE") // "ACTIVE", "EXPIRED", "COMPLETED"
+  purchaseDate    DateTime @default(now())
+  expiryDate      DateTime? // Tanggal kadaluarsa (opsional)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  user            User           @relation(fields: [userId], references: [id])
+  creditPackage   CreditPackage  @relation(fields: [creditPackageId], references: [id])
+  transactions    CreditTransaction[]
+}
+
+model CreditTransaction {
+  id              Int      @id @default(autoincrement())
+  studentCreditId Int
+  transactionType String   // "PURCHASE", "DEDUCTION", "ADJUSTMENT", "REFUND"
+  hours           Float    // +30 jam (purchase), -2 jam (deduction)
+  description     String   // "Pembelian Paket 20 Jam", "Kelas Mandarin Basic"
+  referenceId     String?  // ID kelas atau invoice terkait
+  referenceType   String?  // "CLASS", "INVOICE", "MANUAL"
+  createdAt       DateTime @default(now())
+  
+  studentCredit   StudentCredit @relation(fields: [studentCreditId], references: [id])
+}
+
+// GLOBAL SETTINGS MODEL
+model Settings {
+  id          Int      @id @default(autoincrement())
+  key         String   @unique // "school_name", "school_address", "smtp_host", etc.
+  value       String   // The actual setting value
+  category    String   // "general", "email", "security", "notifications"
+  description String?  // Description of what this setting does
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

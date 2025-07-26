@@ -1,0 +1,19 @@
+-- AlterTable
+ALTER TABLE `user` ADD COLUMN `role` VARCHAR(191) NOT NULL DEFAULT 'SISWA';
+
+-- CreateTable
+CREATE TABLE `Kelas` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `nama` VARCHAR(191) NOT NULL,
+    `status` VARCHAR(191) NOT NULL DEFAULT 'AKTIF',
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Invoice` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `status` VARCHAR(191) NOT NULL DEFAULT 'PENDING',
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

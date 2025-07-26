@@ -1,0 +1,321 @@
+/* Global Styles for Jakarta Mandarin LMS */
+
+/* ===== SMOOTH SCROLL BEHAVIOR ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* ===== PAGE TRANSITION EFFECTS ===== */
+.page-transitioning {
+  cursor: wait;
+}
+
+/* Removed pointer-events restriction to allow normal scrolling */
+
+/* ===== SCROLL TO TOP ANIMATION ===== */
+@keyframes scrollToTop {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.scroll-to-top-enter {
+  animation: scrollToTop 0.3s ease-out;
+}
+
+/* ===== LOADING INDICATOR FOR ROUTE CHANGES ===== */
+.route-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  z-index: 9999;
+  animation: routeLoading 0.5s ease-in-out;
+}
+
+@keyframes routeLoading {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ===== SIDEBAR MENU ACTIVE STYLES ===== */
+.ant-layout-sider .ant-menu-item.ant-menu-item-selected {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(164, 80, 139, 0.4);
+  transform: translateX(4px);
+  transition: all 0.3s ease;
+}
+
+.ant-layout-sider .ant-menu-item:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.ant-layout-sider .ant-menu-item.ant-menu-item-selected .ant-menu-title-content {
+  color: white !important;
+  font-weight: 600;
+}
+
+.ant-layout-sider .ant-menu-item.ant-menu-item-selected .anticon {
+  color: white !important;
+}
+
+/* ===== ALL TABS ACTIVE STYLES ===== */
+.ant-tabs-tab.ant-tabs-tab-active {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(164, 80, 139, 0.4);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: white !important;
+  font-weight: 600;
+}
+
+.ant-tabs-tab:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.ant-tabs-tab:hover .ant-tabs-tab-btn {
+  color: white !important;
+}
+
+/* ===== BUTTON PRIMARY STYLES ===== */
+.ant-btn-primary {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(164, 80, 139, 0.3);
+  transition: all 0.3s ease;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #8a3f75 0%, #e55a61 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(164, 80, 139, 0.4);
+}
+
+.ant-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ===== SWITCH ACTIVE STYLES ===== */
+.ant-switch-checked {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+}
+
+/* ===== PROGRESS BAR STYLES ===== */
+.ant-progress-bg {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+}
+
+/* ===== BADGE STYLES ===== */
+.ant-badge-count {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+}
+
+/* ===== TAG STYLES ===== */
+.ant-tag {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.ant-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== CARD HOVER EFFECTS ===== */
+.ant-card {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== TABLE ROW HOVER ===== */
+.ant-table-tbody > tr:hover > td {
+  background: linear-gradient(135deg, rgba(164, 80, 139, 0.05) 0%, rgba(247, 102, 111, 0.05) 100%) !important;
+}
+
+/* ===== DROPDOWN MENU ACTIVE ===== */
+.ant-dropdown-menu-item-selected {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+  color: white !important;
+}
+
+.ant-dropdown-menu-item:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+}
+
+/* ===== PAGINATION ACTIVE ===== */
+.ant-pagination-item-active {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+  border-color: #a4508b !important;
+}
+
+.ant-pagination-item-active a {
+  color: white !important;
+}
+
+/* ===== STEPS ACTIVE ===== */
+.ant-steps-item-process .ant-steps-item-icon {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+  border-color: #a4508b !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+  border-color: #a4508b !important;
+}
+
+/* ===== RATE STARS ===== */
+.ant-rate-star-full .ant-rate-star-first,
+.ant-rate-star-full .ant-rate-star-second {
+  color: #f7666f !important;
+}
+
+/* ===== SLIDER ACTIVE ===== */
+.ant-slider-track {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+}
+
+.ant-slider-handle {
+  border-color: #a4508b !important;
+}
+
+/* ===== CHECKBOX CHECKED ===== */
+.ant-checkbox-checked .ant-checkbox-inner {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+  border-color: #a4508b !important;
+}
+
+/* ===== RADIO CHECKED ===== */
+.ant-radio-checked .ant-radio-inner {
+  border-color: #a4508b !important;
+}
+
+.ant-radio-checked .ant-radio-inner::after {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+}
+
+/* ===== INPUT FOCUS ===== */
+.ant-input:focus,
+.ant-input-focused,
+.ant-select-focused .ant-select-selector,
+.ant-picker-focused {
+  border-color: #a4508b !important;
+  box-shadow: 0 0 0 2px rgba(164, 80, 139, 0.2) !important;
+}
+
+/* ===== MODAL HEADER ===== */
+.ant-modal-header {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  color: white;
+}
+
+.ant-modal-title {
+  color: white !important;
+}
+
+.ant-modal-close {
+  color: white !important;
+}
+
+/* ===== DRAWER HEADER ===== */
+.ant-drawer-header {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  color: white;
+}
+
+.ant-drawer-title {
+  color: white !important;
+}
+
+.ant-drawer-close {
+  color: white !important;
+}
+
+/* ===== NOTIFICATION STYLES ===== */
+.ant-notification-notice {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== MESSAGE STYLES ===== */
+.ant-message-notice {
+  border-radius: 8px;
+}
+
+/* ===== LOADING SPINNER ===== */
+.ant-spin-dot-item {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%) !important;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .ant-layout-sider .ant-menu-item.ant-menu-item-selected {
+    transform: translateX(2px);
+  }
+  
+  .ant-tabs-tab.ant-tabs-tab-active {
+    transform: translateY(-1px);
+  }
+  
+  .ant-btn-primary:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* ===== SMOOTH ANIMATIONS ===== */
+* {
+  transition: all 0.2s ease;
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8a3f75 0%, #e55a61 100%);
+}

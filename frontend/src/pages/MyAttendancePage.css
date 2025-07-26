@@ -1,0 +1,344 @@
+.my-attendance-page {
+  padding: 24px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.page-header {
+  margin-bottom: 32px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 32px;
+  border-radius: 16px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.page-header h2 {
+  color: white !important;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.page-header .ant-typography {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 16px;
+}
+
+.stats-row {
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card .ant-card-body {
+  padding: 24px;
+}
+
+.stat-card .ant-statistic-title {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.stat-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.quick-actions-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.quick-actions-card .ant-card-body {
+  padding: 24px;
+}
+
+.quick-actions-card h4 {
+  margin-bottom: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.quick-actions-card .ant-btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.quick-actions-card .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filter-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.filter-card .ant-card-body {
+  padding: 24px;
+}
+
+.filter-card h4 {
+  margin-bottom: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.attendance-table-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.attendance-table-card .ant-card-head {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-bottom: none;
+}
+
+.attendance-table-card .ant-card-head-title {
+  color: white;
+  font-weight: 600;
+}
+
+.attendance-table-card .ant-card-body {
+  padding: 0;
+}
+
+.attendance-table-card .ant-table {
+  border-radius: 0;
+}
+
+.attendance-table-card .ant-table-thead > tr > th {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e8e8e8;
+  font-weight: 600;
+  color: #333;
+}
+
+.attendance-table-card .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.attendance-table-card .ant-table-tbody > tr:hover > td {
+  background: #f8f9fa;
+}
+
+.summary-row {
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+.summary-card .ant-card-body {
+  padding: 24px;
+}
+
+.summary-card h4 {
+  color: #333;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+/* Progress bar styling */
+.ant-progress-bg {
+  border-radius: 4px;
+}
+
+.ant-progress-success-bg {
+  background: #52c41a;
+}
+
+.ant-progress-exception-bg {
+  background: #ff4d4f;
+}
+
+/* Tag styling */
+.ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Button styling */
+.ant-btn-link {
+  color: #1890ff;
+  font-weight: 500;
+}
+
+.ant-btn-link:hover {
+  color: #40a9ff;
+}
+
+/* Select styling */
+.ant-select {
+  border-radius: 8px;
+}
+
+.ant-select-selector {
+  border-radius: 8px !important;
+}
+
+/* DatePicker styling */
+.ant-picker {
+  border-radius: 8px;
+}
+
+.ant-picker-input > input {
+  border-radius: 8px;
+}
+
+/* Avatar styling */
+.ant-avatar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .my-attendance-page {
+    padding: 16px;
+  }
+  
+  .page-header {
+    padding: 24px 16px;
+    margin-bottom: 24px;
+  }
+  
+  .page-header h2 {
+    font-size: 20px;
+  }
+  
+  .stat-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .stat-card .ant-statistic-content {
+    font-size: 24px;
+  }
+  
+  .quick-actions-card .ant-card-body,
+  .filter-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .quick-actions-card .ant-space {
+    gap: 8px !important;
+  }
+  
+  .quick-actions-card .ant-btn {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  .attendance-table-card .ant-card-body {
+    overflow-x: auto;
+  }
+  
+  .summary-card .ant-card-body {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-header h2 {
+    font-size: 18px;
+  }
+  
+  .page-header .ant-typography {
+    font-size: 14px;
+  }
+  
+  .stat-card .ant-statistic-content {
+    font-size: 20px;
+  }
+  
+  .quick-actions-card .ant-space {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .quick-actions-card .ant-btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .filter-card .ant-row {
+    flex-direction: column;
+  }
+  
+  .filter-card .ant-col {
+    margin-bottom: 16px;
+  }
+}
+
+/* Animation for cards */
+.stat-card,
+.quick-actions-card,
+.filter-card,
+.attendance-table-card,
+.summary-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for tables */
+.attendance-table-card .ant-table-body::-webkit-scrollbar {
+  height: 6px;
+}
+
+.attendance-table-card .ant-table-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.attendance-table-card .ant-table-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.attendance-table-card .ant-table-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+} 

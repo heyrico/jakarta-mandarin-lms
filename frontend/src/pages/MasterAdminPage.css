@@ -1,0 +1,299 @@
+/* MasterAdminPage.css - Beautiful Admin Panel Styles */
+
+.master-admin-page {
+  padding: 24px;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+.master-admin-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+/* Tab Styles */
+.master-admin-card .ant-tabs-tab {
+  border-radius: 8px 8px 0 0;
+  margin-right: 4px;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+}
+
+.master-admin-card .ant-tabs-tab:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.master-admin-card .ant-tabs-tab.ant-tabs-tab-active {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(164, 80, 139, 0.4);
+  transform: translateY(-2px);
+}
+
+.master-admin-card .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: white !important;
+  font-weight: 600;
+}
+
+.master-admin-card .ant-tabs-tab .ant-tabs-tab-btn {
+  color: #666;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+.master-admin-card .ant-tabs-tab:hover .ant-tabs-tab-btn {
+  color: white;
+}
+
+/* Tab Content Styles */
+.tab-content {
+  padding: 24px 0;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.tab-header h4 {
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Table Styles */
+.master-admin-card .ant-table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.master-admin-card .ant-table-thead > tr > th {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+
+.master-admin-card .ant-table-tbody > tr:hover > td {
+  background: linear-gradient(135deg, rgba(164, 80, 139, 0.05) 0%, rgba(247, 102, 111, 0.05) 100%);
+}
+
+/* Button Styles */
+.master-admin-card .ant-btn-primary {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(164, 80, 139, 0.3);
+  transition: all 0.3s ease;
+}
+
+.master-admin-card .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #8a3f75 0%, #e55a61 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(164, 80, 139, 0.4);
+}
+
+.master-admin-card .ant-btn-text {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.master-admin-card .ant-btn-text:hover {
+  background: rgba(164, 80, 139, 0.1);
+  transform: scale(1.1);
+}
+
+.master-admin-card .ant-btn-text.ant-btn-dangerous:hover {
+  background: rgba(255, 77, 79, 0.1);
+}
+
+/* Tag Styles */
+.master-admin-card .ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.master-admin-card .ant-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge Styles */
+.master-admin-card .ant-badge-count {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  box-shadow: 0 2px 4px rgba(164, 80, 139, 0.3);
+}
+
+/* Modal Styles */
+.master-admin-card .ant-modal-header {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.master-admin-card .ant-modal-title {
+  color: white !important;
+  font-weight: 600;
+}
+
+.master-admin-card .ant-modal-close {
+  color: white !important;
+}
+
+.master-admin-card .ant-modal-content {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Form Styles */
+.master-admin-card .ant-form-item-label > label {
+  font-weight: 600;
+  color: #333;
+}
+
+.master-admin-card .ant-input,
+.master-admin-card .ant-select-selector,
+.master-admin-card .ant-input-number {
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.master-admin-card .ant-input:focus,
+.master-admin-card .ant-input-focused,
+.master-admin-card .ant-select-focused .ant-select-selector,
+.master-admin-card .ant-input-number:focus {
+  border-color: #a4508b;
+  box-shadow: 0 0 0 2px rgba(164, 80, 139, 0.2);
+}
+
+/* Switch Styles */
+.master-admin-card .ant-switch-checked {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+}
+
+/* Alert Styles */
+.master-admin-card .ant-alert {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styles */
+.master-admin-card .ant-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.master-admin-card .ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Statistic Styles */
+.master-admin-card .ant-statistic-title {
+  color: #666;
+  font-weight: 500;
+}
+
+.master-admin-card .ant-statistic-content {
+  color: #a4508b;
+  font-weight: 600;
+}
+
+/* Divider Styles */
+.master-admin-card .ant-divider {
+  border-color: #f0f0f0;
+  margin: 16px 0;
+}
+
+/* Tooltip Styles */
+.master-admin-card .ant-tooltip-inner {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  border-radius: 6px;
+}
+
+/* Popconfirm Styles */
+.master-admin-card .ant-popover-inner {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading States */
+.master-admin-card .ant-spin-dot-item {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .master-admin-page {
+    padding: 12px;
+  }
+  
+  .tab-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .master-admin-card .ant-tabs-tab {
+    margin-right: 2px;
+  }
+  
+  .master-admin-card .ant-tabs-tab .ant-tabs-tab-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .master-admin-card .ant-table {
+    font-size: 12px;
+  }
+}
+
+/* Animation for tab switching */
+.master-admin-card .ant-tabs-tabpane {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+.master-admin-card ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.master-admin-card ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.master-admin-card ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  border-radius: 4px;
+}
+
+.master-admin-card ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8a3f75 0%, #e55a61 100%);
+} 

@@ -1,0 +1,160 @@
+/* SettingsPage.css - Beautiful Gradient Styles */
+
+.settings-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 24px;
+}
+
+/* Custom Tab Styles with Purple-Pink Gradient */
+.settings-card .ant-tabs-tab {
+  border-radius: 8px 8px 0 0;
+  margin-right: 4px;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+}
+
+.settings-card .ant-tabs-tab:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.settings-card .ant-tabs-tab.ant-tabs-tab-active {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(164, 80, 139, 0.4);
+  transform: translateY(-2px);
+}
+
+.settings-card .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: white !important;
+  font-weight: 600;
+}
+
+.settings-card .ant-tabs-tab .ant-tabs-tab-btn {
+  color: #666;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+.settings-card .ant-tabs-tab:hover .ant-tabs-tab-btn {
+  color: white;
+}
+
+/* Tab Content Styles */
+.settings-card .ant-tabs-content-holder {
+  padding: 24px;
+  background: white;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Form Styles */
+.settings-card .ant-form-item-label > label {
+  font-weight: 600;
+  color: #333;
+}
+
+.settings-card .ant-input,
+.settings-card .ant-input-number,
+.settings-card .ant-select-selector {
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.settings-card .ant-input:focus,
+.settings-card .ant-input-number:focus,
+.settings-card .ant-select-focused .ant-select-selector {
+  border-color: #a4508b;
+  box-shadow: 0 0 0 2px rgba(164, 80, 139, 0.2);
+}
+
+/* Save Button with Gradient */
+.settings-card .ant-btn-primary {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(164, 80, 139, 0.3);
+  transition: all 0.3s ease;
+}
+
+.settings-card .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #8a3f75 0%, #e55a61 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(164, 80, 139, 0.4);
+}
+
+/* Section Headers */
+.settings-card .ant-typography h5 {
+  color: #a4508b;
+  font-weight: 700;
+  margin-bottom: 16px;
+  border-left: 4px solid #a4508b;
+  padding-left: 12px;
+}
+
+/* Switch Styles */
+.settings-card .ant-switch-checked {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+}
+
+/* Divider Styles */
+.settings-card .ant-divider {
+  border-color: #f0f0f0;
+  margin: 24px 0;
+}
+
+/* Database Section Buttons */
+.settings-card .ant-btn-danger {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.settings-card .ant-btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.3);
+}
+
+/* Loading Spinner */
+.settings-card .ant-spin-dot-item {
+  background: linear-gradient(135deg, #a4508b 0%, #f7666f 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-card {
+    margin: 12px;
+  }
+  
+  .settings-card .ant-tabs-tab {
+    margin-right: 2px;
+  }
+  
+  .settings-card .ant-tabs-tab .ant-tabs-tab-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Animation for tab switching */
+.settings-card .ant-tabs-tabpane {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
