@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Jakarta Mandarin Learning Management System
 
 A comprehensive Learning Management System (LMS) built for Jakarta Mandarin school, featuring role-based access control, dynamic configuration, and real-time features.
@@ -246,3 +247,7 @@ For support and questions:
 ---
 
 **Built with ❤️ for Jakarta Mandarin School** 
+=======
+# jakarta-mandarin-lms
+Jakarta Mandarin Learning Management System
+>>>>>>> 541f87e3f8ee03bb530d828b85e34f29f0fc0dea
